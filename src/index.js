@@ -8,13 +8,11 @@ const countryList = document.querySelector('.country-list');
 const countryInfo = document.querySelector('.country-info');
 const DEBOUNCE_DELAY = 300;
 let name;
-const baseURL = 'https://restcountries.com/v3.1';
-const URL = `${baseURL}/name/${name}`;
 
 inputEl.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
 
 function onInput(event) {
-  inputValue = event.target.value.trim();
+  const inputValue = event.target.value.trim();
   console.log(inputValue);
   if (inputValue !== '') {
     fetchCountries(inputValue).then(foundData => {
