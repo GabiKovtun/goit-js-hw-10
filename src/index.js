@@ -24,9 +24,11 @@ function onInput(event) {
         Notiflix.Notify.failure('Oops, there is no country with that name');
       } else if (foundData.length >= 2 && foundData.length <= 10) {
         countryInfo.innerHTML = '';
+        countryList.innerHTML = '';
         renderCountryList(foundData);
       } else if (foundData.length === 1) {
         countryList.innerHTML = '';
+        countryInfo.innerHTML = '';
         renderCountryInfo(foundData);
       }
     });
